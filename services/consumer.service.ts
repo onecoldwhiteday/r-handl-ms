@@ -31,7 +31,7 @@ export default class ConsumerService extends Service {
 		this.logger.info(`Received job with timestamp: ${time}`);
 		return new Promise((resolve: any) => {
 			setTimeout(
-				() => resolve(console.log("\x1b[36m%s\x1b[0m", `[${time}][${user}]: ${message}`,)),
+				 () => resolve(console.log("\x1b[36m%s\x1b[0m", `[${time}][${user}]: ${message}`,)),
 				message.length * 1e3);
 		});
 	}
