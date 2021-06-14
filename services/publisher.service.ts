@@ -1,4 +1,6 @@
-import {Context, Service, ServiceBroker} from "moleculer";
+import Moleculer, {Context, Service, ServiceBroker} from "moleculer";
+import {IMessage} from "../types/message.type";
+import ValidationError = Moleculer.Errors.ValidationError;
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const amqpMixin = require("moleculer-amqp");
 
@@ -23,13 +25,11 @@ export default class PublisherService extends Service {
 						timestamp: {type: "number", optional: false}
 					},
 					handler(ctx: Context<any, any>) {
-						try {
-							this.logger.info(`Pushed message to queue: ${ctx.params.timestamp}`);
-							this.sendToQueue("users", ctx.params, {persistent: true});
-						} catch (e) {
-							throw new Error(e);
-						}
-					},
+						const time = new Date(ctx.params.timestamp).toLocaleTimeString();
+						this.sendToQueue("users", ctx.params, {persistent: true});
+						this.logger.info(`Pushed message to queue: ${time}`);
+						return true;
+					}
 				}
 			},
 		});

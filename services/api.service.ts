@@ -45,7 +45,7 @@ export default class ApiService extends Service {
 
 	public async handleInput(req: any, res: any) {
 		res.statusCode = 200;
-		res.end(`Service received message: ${JSON.stringify(req.body, null, 2)}`);
+		res.end();
 		try {
 			await this.broker.call("publisher.initMessage", req.body);
 		} catch (e) {
@@ -55,8 +55,12 @@ export default class ApiService extends Service {
 
 	public errorHandler(req: any, res: any, err: any) {
 		this.logger.error(`[${err.code}]: ${err.type}`);
+
+		// Prepare readable errors text
 		const error = err.data?.length ? err.data.map((e: any) => e.message) : [];
 		error.forEach((e: any) => this.logger.error(e));
+
+		// Send error
 		res.statusCose = err.code || 500;
 		res.end(`${err.code}: ${err.type}. ${JSON.stringify(error, null, 2)}`);
 	}

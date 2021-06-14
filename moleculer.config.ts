@@ -1,9 +1,8 @@
 "use strict";
-import * as os from "os";
 import {BrokerOptions, Errors, MetricRegistry, ServiceBroker} from "moleculer";
 
 const brokerConfig: BrokerOptions = {
-	namespace: "",
+	namespace: "r-handl-ms",
 	nodeID: "node-" + process.pid,
 	metadata: {},
 	logger: {
