@@ -1,17 +1,17 @@
-module.exports = {
-	env: {
-		browser: true,
-		es6: true,
-		node: true
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
 	},
-	ignorePatterns: [ "test/*"],
-	parser: "@typescript-eslint/parser",
-	parserOptions: {
-		project: "tsconfig.json",
-		sourceType: "module"
+	"ignorePatterns": [ "test/*"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "tsconfig.json",
+		"sourceType": "module"
 	},
-	plugins: ["prefer-arrow", "import", "@typescript-eslint"],
-	rules: {
+	"plugins": ["prefer-arrow", "import", "@typescript-eslint"],
+	"rules": {
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "error",
 		"@typescript-eslint/ban-types": "error",
@@ -21,18 +21,18 @@ module.exports = {
 		"@typescript-eslint/explicit-member-accessibility": [
 			"error",
 			{
-				accessibility: "explicit"
+				"accessibility": "explicit"
 			}
 		],
 		"@typescript-eslint/indent": [
 			"off",
 			4,
 			{
-				FunctionDeclaration: {
-					parameters: "first"
+				"FunctionDeclaration": {
+					"parameters": "first"
 				},
-				FunctionExpression: {
-					parameters: "first"
+				"FunctionExpression": {
+					"parameters": "first"
 				}
 			}
 		],
@@ -40,13 +40,13 @@ module.exports = {
 		"@typescript-eslint/member-delimiter-style": [
 			"error",
 			{
-				multiline: {
-					delimiter: "semi",
-					requireLast: true
+				"multiline": {
+					"delimiter": "semi",
+					"requireLast": true
 				},
-				singleline: {
-					delimiter: "semi",
-					requireLast: false
+				"singleline": {
+					"delimiter": "semi",
+					"requireLast": false
 				}
 			}
 		],
@@ -66,7 +66,7 @@ module.exports = {
 			"error",
 			"double",
 			{
-				avoidEscape: true
+				"avoidEscape": true
 			}
 		],
 		"@typescript-eslint/semi": ["error", "always"],
@@ -75,12 +75,12 @@ module.exports = {
 		"@typescript-eslint/unified-signatures": "error",
 		"arrow-body-style": "error",
 		"arrow-parens": ["error", "as-needed"],
-		complexity: "off",
+		"complexity": "off",
 		"constructor-super": "error",
-		curly: "error",
+		"curly": "error",
 		"dot-notation": "error",
 		"eol-last": "error",
-		eqeqeq: ["error", "smart"],
+		"eqeqeq": ["error", "smart"],
 		"guard-for-in": "error",
 		"id-blacklist": ["error", "any", "Number", "number", "String", "string", "Boolean", "boolean", "Undefined", "undefined"],
 		"id-match": "error",
@@ -90,7 +90,7 @@ module.exports = {
 			"error",
 			{
 				"ignoreUrls": true ,
-				code: 160
+				"code": 160
 			}
 		],
 		"new-parens": "error",
@@ -108,7 +108,7 @@ module.exports = {
 		"no-shadow": [
 			"error",
 			{
-				hoist: "all"
+				"hoist": "all"
 			}
 		],
 		"no-throw-literal": "error",
@@ -123,17 +123,17 @@ module.exports = {
 		"one-var": ["error", "never"],
 		"prefer-const": "error",
 		"quote-props": ["error", "consistent-as-needed"],
-		radix: "error",
+		"radix": "error",
 		"space-before-function-paren": [
 			"error",
 			{
-				anonymous: "never",
-				asyncArrow: "always",
-				named: "never"
+				"anonymous": "never",
+				"asyncArrow": "always",
+				"named": "never"
 			}
 		],
 		"spaced-comment": "error",
 		"use-isnan": "error",
 		"valid-typeof": "off",
 	}
-};
+}
