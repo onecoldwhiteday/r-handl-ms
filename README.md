@@ -13,5 +13,5 @@ Run tests: `npm test`
 
 ## Services
 - **api**: API Gateway service
-- **producer**: Gets message from API Gateway and puts it in RabbitMQ queue
+- **publisher**: Gets message from API Gateway and puts it in RabbitMQ queue
 - **consumer**: Takes messages by turn from queue and print them to console with timeout which equals message.length in seconds
